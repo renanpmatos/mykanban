@@ -1,3 +1,5 @@
+"use client";
+
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { Trash2 } from "lucide-react";
 import { Column, Id, Task } from "../app/types";

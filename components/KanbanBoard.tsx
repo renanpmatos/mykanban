@@ -38,9 +38,13 @@ function KanbanBoard() {
   }, []);
 
   // Fetching do Local Storage
-  const getTasks = localStorage.getItem("taskAdded");
-  const getColumns = localStorage.getItem("columnAdded");
+  let getTasks = null;
+  let getColumns = null;
 
+  if (typeof window !== "undefined") {
+    getTasks = localStorage.getItem("taskAdded");
+    getColumns = localStorage.getItem("columnAdded");
+  }
   useEffect(() => {
     if (getTasks == null || getColumns == null) {
       setTasks([]);
