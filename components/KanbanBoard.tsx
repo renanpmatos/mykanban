@@ -41,17 +41,18 @@ function KanbanBoard() {
   let getTasks = null;
   let getColumns = null;
 
-  if (typeof window !== "undefined") {
-    getTasks = localStorage.getItem("taskAdded");
-    getColumns = localStorage.getItem("columnAdded");
-  }
   useEffect(() => {
-    if (getTasks == null || getColumns == null) {
-      setTasks([]);
-      setColumns([]);
-    } else {
-      setTasks(JSON.parse(getTasks));
-      setColumns(JSON.parse(getColumns));
+    if (typeof window !== "undefined") {
+      getTasks = localStorage.getItem("taskAdded");
+      getColumns = localStorage.getItem("columnAdded");
+
+      if (getTasks == null || getColumns == null) {
+        setTasks([]);
+        setColumns([]);
+      } else {
+        setTasks(JSON.parse(getTasks));
+        setColumns(JSON.parse(getColumns));
+      }
     }
   }, []);
 
@@ -232,6 +233,9 @@ function KanbanBoard() {
   function onDragEnd(event: DragEndEvent) {
     setActiveColumn(null); // zera a coluna selecionada
     setActiveTask(null); // zera a task selecionada
+
+    localStorage.setItem("taskAdded", JSON.stringify(tasks));
+    localStorage.setItem("columnAdded", JSON.stringify(columns));
 
     const { active, over } = event;
     if (!over) return;
