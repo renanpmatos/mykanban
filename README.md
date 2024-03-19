@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
   <br>
-  <a href="https://geoma-renans-projects-181ce21b.vercel.app">Confira o projeto em Tempo Real</a>
+  <a href="https://mykanban-zeta.vercel.app">Confira o projeto em Tempo Real</a>
 </div>
 
 ## 📋 <a name="table">Conteúdos</a>
